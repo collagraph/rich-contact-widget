@@ -270,7 +270,7 @@ class RC_Widget extends WP_Widget {
                 $widget_output .= '<li class="u-email"><a href="mailto:' . antispambot($instance['email']) . '" title="Email ' . $instance['name'] . '">' . $instance['email'] . '</a></li>';
             }
             if ( !empty( $instance['web'] ) ) {
-                $widget_output .= '<li class="u-url"><a href="http://' . $instance['web'] . '" title="The website of ' . $instance['name'] . '">' . $instance['web'] . '</a></li>';
+                $widget_output .= '<li class="u-url"><a href="' . $instance['web'] . '" title="The website of ' . $instance['name'] . '">' . $instance['web'] . '</a></li>';
             }
 
             if ( $instance['vcf'] == 1 ) {
