@@ -216,12 +216,12 @@ class RC_Widget extends WP_Widget {
             $org = ' org';
         }
         
-        $widget_output = '<ul class="hcard">';
+        $widget_output = '<ul class="h-card">';
             if ( !empty( $instance['name'] ) )
                 $widget_output .= '<li class="p-name"><strong>' . $instance['name'] . '</strong></li>';
             if ( !empty( $instance['activity'] ) )
                 $widget_output .= '<li class="p-job-title">' . $instance['activity'] . '</li>';
-            $widget_output .= '<li><div class="p-adr">';
+            $widget_output .= '<li>';
                 if ( !empty( $instance['address'] ) ) {
                     $widget_output .= '<span class="p-street-address">' . nl2br( $instance['address'] ) . '</span><br />';
                     }
@@ -249,7 +249,7 @@ class RC_Widget extends WP_Widget {
                 if ( !empty( $instance['country'] ) ) {
                     $widget_output .= '<span class="p-country-name">' . $instance['country'] . '</span>';
                 }
-            $widget_output .= '</div></li>';
+            $widget_output .= '</li>';
             if ( !empty( $instance['phone'] ) ) {
                 $widget_output .= '<li class="p-tel">';
 
@@ -270,7 +270,7 @@ class RC_Widget extends WP_Widget {
                 $widget_output .= '<li class="u-email"><a href="mailto:' . antispambot($instance['email']) . '" title="Email ' . $instance['name'] . '">' . $instance['email'] . '</a></li>';
             }
             if ( !empty( $instance['web'] ) ) {
-                $widget_output .= '<li class="u-url"><a href="' . $instance['web'] . '" title="The website of ' . $instance['name'] . '">' . $instance['web'] . '</a></li>';
+                $widget_output .= '<li class="u-url"><a href="http://' . $instance['web'] . '" title="The website of ' . $instance['name'] . '">' . $instance['web'] . '</a></li>';
             }
 
             if ( $instance['vcf'] == 1 ) {
